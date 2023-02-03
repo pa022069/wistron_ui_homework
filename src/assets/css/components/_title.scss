@@ -1,0 +1,19 @@
+@import '../base/base';
+
+.fontSize {
+  &__sm {
+    font-size: $size-14;
+  }
+
+  &__base {
+    font-size: $size-16;
+  }
+
+  &__lg {
+    font-size: $size-18;
+  }
+
+  &__3xl {
+    font-size: $size-30;
+  }
+}

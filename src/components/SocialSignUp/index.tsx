@@ -1,10 +1,19 @@
-import { FaFacebookF } from "react-icons/fa";
+import '../../assets/css/components/_button.scss';
+import { buttonList } from './utils';
 
-const SocialSignUp = (): JSX.Element => {
+interface Props {
+  type: string;
+}
+
+const SocialSignUp = ({ type }: Props): JSX.Element => {
   return (
-    <a className="flex__cc font__normal">
-      <FaFacebookF />
-      <p>Sign up with Google</p>
+    <a className="flex__ac font__normal buttonStyle__social">
+      {
+        buttonList[type].icon({
+          className: "buttonStyle__social--icon"
+        })
+      }
+      <p className="buttonStyle__social--text">{buttonList[type].text}</p>
     </a>
   );
 };

@@ -1,0 +1,17 @@
+@mixin flex-cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-bc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-ac {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

@@ -1,0 +1,43 @@
+@import '../base/base';
+@import '../base/init';
+@import '../base/flex';
+@import '../components/title';
+@import '../base/mixin';
+
+.formWrapper {
+  position: relative;
+  background-color: white;
+  padding: $size-24;
+  box-shadow: 0px 5px 10px 5px rgba(222, 231, 255, 0.25);
+  border-radius: $size-4;
+  width: 100%;
+  max-width: 610px;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+
+    &>* {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.col {
+  &__one {
+    display: flex;
+
+    &>* {
+      flex: 1;
+    }
+  }
+
+  &__two {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    @include flex-bc;
+  }
+}
