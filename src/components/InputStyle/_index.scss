@@ -1,0 +1,72 @@
+@import '../../assets/css/base/base';
+
+.inputStyle {
+  &__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue-light;
+    border-radius: $size-4;
+    padding: $size-8 $size-12;
+  }
+
+  &__icon {
+    font-size: 19px;
+    flex-shrink: 0;
+    cursor: pointer;
+    color: $gray-AB;
+
+    &--show {
+      color: $blue-main;
+    }
+  }
+
+  &__default {
+    position: relative;
+    width: 100%;
+    cursor: text;
+
+    &--focus {
+      label {
+        font-size: $size-12 !important;
+        scale: 0.83 !important;
+        padding: 0 !important;
+      }
+
+      input {
+        display: block !important;
+      }
+    }
+
+    label {
+      width: 100%;
+      color: $gray-75;
+      font-size: $size-14;
+      scale: 1;
+      display: block;
+      transform-origin: 0% 0%;
+      padding: $size-8 0;
+      transition: scale 0.3s;
+      cursor: text;
+    }
+
+    input {
+      position: relative;
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin-top: 2px;
+      margin-bottom: 1px;
+      display: none;
+      transition: all 0.3s;
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

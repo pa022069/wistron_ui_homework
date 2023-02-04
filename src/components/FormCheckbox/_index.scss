@@ -6,6 +6,50 @@
   padding: 8px 0;
   gap: 2%;
 
+  &__label {
+    label {
+      position: relative;
+      border-radius: 2px;
+      display: block;
+      width: $size-18;
+      height: $size-18;
+      background-color: $gray-AB;
+      border: 1px solid $gray-AB;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    input[type=checkbox] {
+      display: none;
+
+      &:checked+label {
+        background-color: white;
+        border: 1px solid $blue-main;
+
+        &::after {
+          position: relative;
+          top: -1px;
+          width: 4px;
+          height: 8px;
+          content: '';
+          transform-origin: center;
+          display: block;
+          rotate: 45deg;
+          border-style: solid;
+          border-top-width: 0;
+          border-left-width: 0;
+          border-bottom-width: 2px;
+          border-bottom-color: $blue-main;
+          border-right-width: 2px;
+          border-right-color: $blue-main;
+        }
+      }
+    }
+  }
+
   &__text {
     font-size: $size-13;
     line-height: 1.2;
