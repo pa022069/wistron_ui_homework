@@ -1,6 +1,10 @@
 @import '../base/base';
 
 .fontSize {
+  &__13 {
+    font-size: $size-14;
+  }
+
   &__sm {
     font-size: $size-14;
   }

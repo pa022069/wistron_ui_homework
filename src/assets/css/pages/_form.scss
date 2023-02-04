@@ -7,11 +7,16 @@
 .formWrapper {
   position: relative;
   background-color: white;
-  padding: $size-24;
+  padding: $size-8;
   box-shadow: 0px 5px 10px 5px rgba(222, 231, 255, 0.25);
   border-radius: $size-4;
   width: 100%;
   max-width: 610px;
+  min-width: 375px;
+
+  @media(min-width: $sm-width) {
+    padding: $size-24;
+  }
 
   &__container {
     position: relative;
@@ -24,10 +29,26 @@
       margin-bottom: 8px;
     }
   }
+
+  &__text {
+    font-size: $size-13;
+    color: $gray-75;
+    text-align: center;
+    padding-top: $size-8;
+
+    a {
+      color: $blue-main;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .col {
-  &__one {
+  &__1 {
     display: flex;
 
     &>* {
@@ -35,9 +56,21 @@
     }
   }
 
-  &__two {
+  &__2 {
     padding-top: 8px;
     padding-bottom: 8px;
     @include flex-bc;
+
+    &--normal {
+      gap: 2%;
+    }
+
+    &--wider {
+      gap: 5%;
+    }
+
+    &--fixed {
+      flex-shrink: 0;
+    }
   }
 }

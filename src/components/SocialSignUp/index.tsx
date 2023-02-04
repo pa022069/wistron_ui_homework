@@ -1,4 +1,4 @@
-import '../../assets/css/components/_button.scss';
+import './_index.scss';
 import { buttonList } from './utils';
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
 
 const SocialSignUp = ({ type }: Props): JSX.Element => {
   return (
-    <a className="flex__ac font__normal buttonStyle__social">
+    <a className="flex__bc font__normal buttonStyle__social">
       {
         buttonList[type].icon({
           className: "buttonStyle__social--icon"

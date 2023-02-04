@@ -1,0 +1,14 @@
+@import '../../assets/css/base/mixin';
+@import '../../assets/css/base/base';
+
+.formCheckbox {
+  @include flex-bc;
+  padding: 8px 0;
+  gap: 2%;
+
+  &__text {
+    font-size: $size-13;
+    line-height: 1.2;
+    color: $gray-75;
+  }
+}
