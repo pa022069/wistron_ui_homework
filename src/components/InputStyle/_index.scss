@@ -10,6 +10,7 @@
     background-color: $blue-light;
     border-radius: $size-4;
     padding: $size-8 $size-12;
+    box-sizing: border-box;
   }
 
   &__icon {
@@ -27,6 +28,7 @@
     position: relative;
     width: 100%;
     cursor: text;
+    flex-shrink: 1;
 
     &--focus {
       label {
@@ -67,6 +69,53 @@
         border: none;
         outline: none;
       }
+    }
+  }
+
+  &__validated {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: $size-14;
+    margin-top: $size-8;
+
+    &>div {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: $size-4;
+
+      &>* {
+        color: $gray-AB;
+      }
+    }
+
+    &--check {
+      .inputStyle__validated {
+        &--icon {
+          color: $green-light;
+        }
+
+        &--text {
+          color: black;
+        }
+      }
+    }
+
+    &--icon {
+      position: relative;
+      top: 1px;
+      font-size: 0.6875rem;
+    }
+
+    &--text {
+      position: relative;
+      top: 1px;
+      font-size: $size-12;
+      scale: 0.83;
+      transform-origin: 0% 0%;
     }
   }
 }

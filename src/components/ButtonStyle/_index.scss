@@ -1,4 +1,5 @@
 @import '../../assets/css/base/base';
+@import '../../assets/css/base/mixin';
 
 @mixin button {
   position: relative;
@@ -11,6 +12,7 @@
 
 .buttonStyle {
   &__default {
+    @include flex-cc;
     @include button;
     background-color: $blue-main;
     color: white;
@@ -19,6 +21,7 @@
   }
 
   &__social {
+    @include flex-bc;
     @include button;
     border: 1px solid $blue-main;
     background-color: white;

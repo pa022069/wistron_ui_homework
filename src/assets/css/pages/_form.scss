@@ -1,21 +1,42 @@
 @import '../base/base';
 @import '../base/init';
-@import '../base/flex';
 @import '../components/title';
 @import '../base/mixin';
 
 .formWrapper {
   position: relative;
   background-color: white;
-  padding: $size-8;
-  box-shadow: 0px 5px 10px 5px rgba(222, 231, 255, 0.25);
+  padding: $size-24 $size-8;
   border-radius: $size-4;
   width: 100%;
   max-width: 610px;
   min-width: 375px;
+  box-sizing: border-box;
 
   @media(min-width: $sm-width) {
     padding: $size-24;
+    box-shadow: 0px 5px 10px 5px rgba(222, 231, 255, 0.25);
+  }
+
+  &__back {
+    @include flex-sc;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    padding-bottom: $size-4;
+    margin-bottom: $size-24;
+
+    &--icon {
+      font-size: $size-12;
+      flex-shrink: 0;
+      margin-right: $size-8;
+    }
+
+    &:hover {
+      border-bottom: 2px solid $blue-main;
+    }
   }
 
   &__container {
@@ -50,12 +71,9 @@
 .col {
   &__1 {
     display: flex;
+    flex-direction: column;
     padding-top: 8px;
     padding-bottom: 8px;
-
-    &>* {
-      flex: 1;
-    }
   }
 
   &__2 {
