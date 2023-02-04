@@ -8,7 +8,6 @@ import { BsArrowLeft } from "react-icons/bs";
 const App = (): JSX.Element => {
   const onSubmitForm = useCallback((element: React.FormEvent<HTMLFormElement>) => {
     element.preventDefault();
-    const emailFormat = new RegExp("\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
 
     const formData = element.currentTarget
     const data = {

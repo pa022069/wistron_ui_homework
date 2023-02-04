@@ -20,7 +20,7 @@ const Default = (props: DefaultProps): JSX.Element => {
   return (
     <div className='inputStyle__container'>
       <div className={`inputStyle__default ${(isFocus) ? 'inputStyle__default--focus' : ''}`}>
-        <label className='font__normal' onClick={handleClick} htmlFor={props.name}>{props.title}</label>
+        <label className='font__normal fontSize__sm' onClick={handleClick} htmlFor={props.name}>{props.title}</label>
         <input onBlur={() => {
           const isHasValue = inputRef.current.value !== '';
           setIsFocus(isHasValue)

@@ -16,7 +16,6 @@
     @include button;
     background-color: $blue-main;
     color: white;
-    font-size: $size-14;
     border: none;
     transition: box-shadow 0.3s;
 
@@ -42,7 +41,6 @@
 
     &--icon {
       color: $blue-main;
-      font-size: $size-16;
       flex-shrink: 0;
     }
 

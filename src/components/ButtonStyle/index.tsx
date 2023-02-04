@@ -15,7 +15,7 @@ interface SignUpProps {
 
 const Default = (props: DefaultProps): JSX.Element => {
   return (
-    <button type={props.type} className="font__normal buttonStyle__default" onSubmit={props.onClick} onClick={props.onClick}>
+    <button type={props.type} className="font__normal buttonStyle__default fontSize__sm" onSubmit={props.onClick} onClick={props.onClick}>
       {props.text}
     </button>
   )
@@ -26,7 +26,7 @@ const SocialSignUp = (props: SignUpProps): JSX.Element => {
     <button type={props.type} className="font__normal buttonStyle__social" onClick={props.onClick}>
       {
         buttonList[props.icon].icon({
-          className: "buttonStyle__social--icon"
+          className: "buttonStyle__social--icon fontSize__base"
         })
       }
       <p className="buttonStyle__social--text">{buttonList[props.icon].text}</p>
