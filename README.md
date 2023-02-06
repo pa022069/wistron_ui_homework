@@ -8,6 +8,12 @@ npm install
 npm run dev
 ```
 
+## Demo Server
+
+```
+npm run server
+```
+
 ## Packages
 
 | Package                                                                      | Version |
