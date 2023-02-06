@@ -1,4 +1,4 @@
-import './_index.scss';
+import "./_index.scss";
 
 interface Props {
   text: string | JSX.Element;
@@ -7,11 +7,11 @@ interface Props {
 const FormCheckbox = (props: Props): JSX.Element => {
   return (
     <div className="formCheckbox">
-      <div className='formCheckbox__label'>
+      <div className="formCheckbox__label">
         <input type="checkbox" name="checkbox" id="checkbox" />
         <label htmlFor="checkbox" />
       </div>
-      <p className="formCheckbox__text">{props.text}</p>
+      <p className="formCheckbox__text font__normal">{props.text}</p>
     </div>
   );
 };
