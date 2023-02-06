@@ -7,3 +7,9 @@ npm install
 
 npm run dev
 ```
+
+## Packages
+
+| Package                 | Version                            |
+| ----------------------- | :--------------------------------- |
+| [@tanstack/react-query] | [![@tanstack/react-query version]] |
