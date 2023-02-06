@@ -5,9 +5,12 @@ import { TitleBar } from "./utils/commonUtils";
 import FormCheckbox from "./components/FormCheckbox";
 import { BsArrowLeft } from "react-icons/bs";
 import { onSubmitFormApi } from "./api";
+import { useMutation } from "@tanstack/react-query";
 
 const App = (): JSX.Element => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { data, mutate, isLoading } = useMutation({
+    mutationFn: onSubmitFormApi,
+  });
   const onSubmitForm = useCallback(
     async (element: React.FormEvent<HTMLFormElement>) => {
       element.preventDefault();
@@ -20,10 +23,7 @@ const App = (): JSX.Element => {
         checkbox: formData.checkbox.checked,
       };
       try {
-        setIsLoading(true);
-        const response = await onSubmitFormApi(data);
-        console.log("response", response);
-        setIsLoading(false);
+        mutate(data);
       } catch (error) {
         console.log(error);
       }
