@@ -10,6 +10,6 @@ npm run dev
 
 ## Packages
 
-| Package                 | Version                            |
-| ----------------------- | :--------------------------------- |
-| [@tanstack/react-query] | [![@tanstack/react-query version]] |
+| Package                                                                      | Version |
+| ---------------------------------------------------------------------------- | :------ |
+| [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query) | 4.24.4  |
