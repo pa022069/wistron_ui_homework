@@ -1,34 +1,45 @@
-import './_index.scss';
-import { buttonList } from './utils';
+import "./_index.scss";
+import { buttonList } from "./utils";
 
 interface DefaultProps {
   text: string;
+  disabled?: boolean;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
 }
 
 interface SignUpProps {
   icon: string;
+  disabled?: boolean;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
 }
 
 const Default = (props: DefaultProps): JSX.Element => {
   return (
-    <button type={props.type} className="font__normal buttonStyle__default fontSize__sm" onSubmit={props.onClick} onClick={props.onClick}>
+    <button
+      disabled={props.disabled}
+      type={props.type}
+      className="font__normal buttonStyle__default fontSize__sm"
+      onSubmit={props.onClick}
+      onClick={props.onClick}
+    >
       {props.text}
     </button>
-  )
+  );
 };
 
 const SocialSignUp = (props: SignUpProps): JSX.Element => {
   return (
-    <button type={props.type} className="font__normal buttonStyle__social" onClick={props.onClick}>
-      {
-        buttonList[props.icon].icon({
-          className: "buttonStyle__social--icon fontSize__base"
-        })
-      }
+    <button
+      disabled={props.disabled}
+      type={props.type}
+      className="font__normal buttonStyle__social"
+      onClick={props.onClick}
+    >
+      {buttonList[props.icon].icon({
+        className: "buttonStyle__social--icon fontSize__base",
+      })}
       <p className="buttonStyle__social--text">{buttonList[props.icon].text}</p>
     </button>
   );
@@ -36,5 +47,5 @@ const SocialSignUp = (props: SignUpProps): JSX.Element => {
 
 export default {
   Default,
-  SocialSignUp
+  SocialSignUp,
 };

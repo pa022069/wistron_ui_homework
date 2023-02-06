@@ -23,7 +23,12 @@
     }
 
     input[type=checkbox] {
-      display: none;
+      position: absolute;
+      opacity: 0;
+
+      &:focus+label {
+        border: 1px solid $blue-main;
+      }
 
       &:checked+label {
         background-color: white;

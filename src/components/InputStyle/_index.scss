@@ -38,7 +38,7 @@
       }
 
       input {
-        display: block !important;
+        position: relative !important;
       }
     }
 
@@ -54,14 +54,13 @@
     }
 
     input {
-      position: relative;
+      position: absolute;
       width: 100%;
       background-color: transparent;
       border: none;
       padding: 0;
       margin-top: 2px;
       margin-bottom: 1px;
-      display: none;
       transition: all 0.3s;
 
       &:focus {
