@@ -1,7 +1,7 @@
 ## Installation
 
 ```
-cd vite-homework
+cd wistron_ui_homework
 
 npm install
 
