@@ -24,5 +24,5 @@ npm run server
 | Package                                                                      | Version |
 | ---------------------------------------------------------------------------- | :------ |
 | [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query) | 4.24.4  |
-| [axios](https://www.npmjs.com/package/@tanstack/react-query)                 | 1.3.2   |
-| [react-icons](https://www.npmjs.com/package/@tanstack/react-query)           | 4.7.1   |
+| [axios](https://www.npmjs.com/package/axios)                                 | 1.3.2   |
+| [react-icons](https://react-icons.github.io/react-icons/search?q=bell)       | 4.7.1   |
