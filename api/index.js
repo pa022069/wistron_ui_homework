@@ -18,6 +18,6 @@ app.use(bodyParser.json())
 
 app.use('/', api);
 
-app.listen(process.env.PORT || 8080, function () {
-  console.log('app listening on port ' + 8080 + '!');
+app.listen(process.env.PORT || 8001, function () {
+  console.log('app listening on port ' + 8001 + '!');
 });
