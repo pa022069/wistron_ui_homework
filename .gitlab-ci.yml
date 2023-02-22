@@ -15,11 +15,6 @@ build:
     paths:
       - dist
 
-test_ready:
-  stage: test
-  script:
-    - echo "Ready to test!"
-
 cypress_test:
   image: cypress/base:16.18.1
   needs:
@@ -33,9 +28,14 @@ cypress_test:
     - wait-on http://localhost:3000
     - npm run cypress:run
 
+test_ready:
+  stage: test
+  script:
+    - echo "Ready to test!"
+
 deploy:
-  only:
-    - main
+  # only:
+  #   - main
   stage: deploy
   script:
     - echo "Deploy Project"
