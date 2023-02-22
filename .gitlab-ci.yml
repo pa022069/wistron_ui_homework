@@ -14,6 +14,7 @@ build:
       - dist
 
 cypress_test:
+  image: cypress/base
   stage: test
   script:
     - npm ci
