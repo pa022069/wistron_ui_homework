@@ -1,4 +1,4 @@
-image: node:latest
+image: node
 
 stages:
   - build
@@ -27,12 +27,6 @@ cypress_test:
     - serve -s dist &
     - wait-on http://localhost:3000
     - npm run cypress:run
-  artifacts:
-    when: always
-    paths:
-      - test-results.xml
-    reports:
-      junit: test-results.xml
 
 # test_ready:
 #   stage: test
