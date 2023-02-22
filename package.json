@@ -8,8 +8,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "cypress:test": "./node_modules/.bin/cypress run --headless",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run - browser chrome - headless"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.24.4",
