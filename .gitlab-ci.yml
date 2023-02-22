@@ -1,4 +1,4 @@
 run_cypress_test:
-  image: npm:18
+  image: node:18
   script:
     - npm run cypress:run
