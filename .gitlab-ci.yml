@@ -30,8 +30,6 @@ stages:
 build_docker:
   stage: docker
   image: docker
-  tags:
-    - docker-latest-dind
   services:
     - docker:dind
   # needs:
