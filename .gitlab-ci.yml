@@ -18,9 +18,9 @@ build:
 
 cypress_test:
   image: cypress/base:16.18.1
-  # needs:
-  #   - test_ready
   stage: test
+  needs:
+    - build
   script:
     - npm ci
     - npm install -g serve
@@ -41,7 +41,8 @@ cypress_test:
 #   script:
 #     - echo "Deploy Project"
 
-build_docker_image:
+docker_image:
+  image: docker
   stage: docker-image
   needs:
     - cypress_test
