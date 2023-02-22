@@ -20,5 +20,5 @@ cypress_test:
     - npm install -g serve
     - npm install -g wait-on
     - serve -s dist &
-    - wait-on http://localhost:5173
+    - wait-on http://localhost:3000
     - npm run cypress:run
