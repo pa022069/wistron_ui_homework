@@ -34,6 +34,7 @@ cypress_test:
 
 build_docker:
   stage: docker
+  image: docker
   needs:
     - cypress_test
   before_script:
