@@ -8,6 +8,7 @@ build:
   stage: build
   script:
     - npm ci
+    - npm install
     - npm run build
   artifacts:
     paths:
@@ -18,6 +19,7 @@ cypress_test:
   stage: test
   script:
     - npm ci
+    - npm install
     - npm install -g serve
     - npm install -g wait-on
     - serve -s dist &
