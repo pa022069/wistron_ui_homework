@@ -1,6 +1,7 @@
 image: node:latest
 
 run_cypress_test:
+  image: cypress/browsers:node18
   script:
     - npm install
     - npm ci
