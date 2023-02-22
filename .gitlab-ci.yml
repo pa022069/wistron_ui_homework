@@ -1,5 +1,8 @@
 image: node
 
+variables:
+  IMAGE_VERSION: 1.0
+
 stages:
   - build
   - test
@@ -38,5 +41,5 @@ build_docker:
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker build -t $CI_REGISTRY_IMAGE:1.0 .
-    - docker push $CI_REGISTRY_IMAGE:1.0
+    - docker build -t $CI_REGISTRY_IMAGE:IMAGE_VERSION .
+    - docker push $CI_REGISTRY_IMAGE:IMAGE_VERSION
