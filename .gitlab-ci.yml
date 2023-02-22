@@ -15,11 +15,10 @@ build:
       - dist
 
 cypress_test:
-  image: cypress/base
+  image: cypress/base:16.18.1
   stage: test
   script:
     - npm ci
-    - npm install
     - npm install -g serve
     - npm install -g wait-on
     - serve -s dist &
