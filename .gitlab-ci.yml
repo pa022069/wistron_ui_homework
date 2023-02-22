@@ -13,11 +13,11 @@ build:
       - dist
 
 cypress_test:
-  image: cypress/base:18.14.1
   stage: test
   script:
     - npm ci
-    - npm run dev
+    - npm install -g serve
     - npm install -g wait-on
+    - serve -s dist &
     - wait-on http://localhost:5173
     - npm run cypress:run
