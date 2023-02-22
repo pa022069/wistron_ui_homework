@@ -16,4 +16,5 @@ cypress_test:
   image: cypress/base:18.14.1
   stage: test
   script:
-    - npm run cypress:test
+    - npm ci
+    - npm run cypress:run
