@@ -17,8 +17,8 @@ build:
 
 cypress_test:
   image: cypress/base:16.18.1
-  needs:
-    - test_ready
+  # needs:
+  #   - test_ready
   stage: test
   script:
     - npm ci
@@ -27,11 +27,17 @@ cypress_test:
     - serve -s dist &
     - wait-on http://localhost:3000
     - npm run cypress:run
+  artifacts:
+    when: always
+    paths:
+      - test-results.xml
+    reports:
+      junit: test-results.xml
 
-test_ready:
-  stage: test
-  script:
-    - echo "Ready to test!"
+# test_ready:
+#   stage: test
+#   script:
+#     - echo "Ready to test!"
 
 deploy:
   # only:
