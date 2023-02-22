@@ -1,8 +1,15 @@
-image: node:latest
+stages:
+  - build
+  - test
 
-run_cypress_test:
-  image: cypress/browsers:node18
+build:
+  image: node:latest
+  stage: build
   script:
     - npm install
-    - npm ci
+
+cypress_test:
+  image: cypress/base:lastest
+  stage: test
+  script:
     - npm run cypress:run
