@@ -4,5 +4,4 @@ run_cypress_test:
   script:
     - npm install
     - npm ci
-    - npm run start:ci &
     - npm run cypress:run
