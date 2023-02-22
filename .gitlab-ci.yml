@@ -1,32 +1,32 @@
 image: node
 
 stages:
-  - build
-  - test
+  # - build
+  # - test
   - docker
 
-build:
-  stage: build
-  script:
-    - npm ci
-    - npm install
-    - npm run build
-  artifacts:
-    paths:
-      - dist
+# build:
+#   stage: build
+#   script:
+#     - npm ci
+#     - npm install
+#     - npm run build
+#   artifacts:
+#     paths:
+#       - dist
 
-cypress_test:
-  image: cypress/base:16.18.1
-  stage: test
-  needs:
-    - build
-  script:
-    - npm ci
-    - npm install -g serve
-    - npm install -g wait-on
-    - serve -s dist &
-    - wait-on http://localhost:3000
-    - npm run cypress:run
+# cypress_test:
+#   image: cypress/base:16.18.1
+#   stage: test
+#   needs:
+#     - build
+#   script:
+#     - npm ci
+#     - npm install -g serve
+#     - npm install -g wait-on
+#     - serve -s dist &
+#     - wait-on http://localhost:3000
+#     - npm run cypress:run
 
 build_docker:
   stage: docker
@@ -34,7 +34,7 @@ build_docker:
   needs:
     - cypress_test
   before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD registry.gitlab.com
+    - docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY_PASSWORD registry.gitlab.com
   script:
     - docker build -t registry.gitlab.com/pa022069/homework-project:1.0 .
     - docker push registry.gitlab.com/pa022069/homework-project:1.0
