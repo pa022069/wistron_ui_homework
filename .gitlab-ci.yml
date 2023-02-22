@@ -3,6 +3,7 @@ image: node:latest
 stages:
   - build
   - test
+  - deploy
 
 build:
   stage: build
@@ -14,8 +15,15 @@ build:
     paths:
       - dist
 
+test_ready:
+  stage: test
+  script:
+    - echo "Ready to test!"
+
 cypress_test:
   image: cypress/base:16.18.1
+  need:
+    - test_ready
   stage: test
   script:
     - npm ci
@@ -24,3 +32,10 @@ cypress_test:
     - serve -s dist &
     - wait-on http://localhost:3000
     - npm run cypress:run
+
+deploy:
+  only:
+    - main
+  stage: deploy
+  script:
+    - echo "Deploy Project"
