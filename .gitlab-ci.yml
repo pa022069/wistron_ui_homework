@@ -1,9 +1,10 @@
+image: node:latest
+
 stages:
   - build
   - test
 
 build:
-  image: node:latest
   stage: build
   script:
     - npm ci
@@ -13,7 +14,6 @@ build:
       - dist
 
 cypress_test:
-  image: node:latest
   stage: test
   script:
     - npm ci
