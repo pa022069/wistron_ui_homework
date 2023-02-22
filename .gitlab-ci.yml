@@ -1,6 +1,9 @@
-image: node:18
+image: node:node:latest
+
+script: npm install
 
 run_cypress_test:
   script:
-    - npm install
+    - npm ci
+    - npm run start:ci &
     - npm run cypress:run
