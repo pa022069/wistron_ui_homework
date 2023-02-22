@@ -1,7 +1,7 @@
 image: node
 
 variables:
-  IMAGE_VERSION: 1.0
+  IMAGE_VERSION: "1.0"
 
 stages:
   - build
