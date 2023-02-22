@@ -1,4 +1,4 @@
-image: node:node:latest
+image: node:latest
 
 run_cypress_test:
   script:
