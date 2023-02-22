@@ -1,4 +1,5 @@
 image: node
+
 stages:
   - build
   - test
