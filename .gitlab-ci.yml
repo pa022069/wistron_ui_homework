@@ -22,7 +22,7 @@ test_ready:
 
 cypress_test:
   image: cypress/base:16.18.1
-  need:
+  needs:
     - test_ready
   stage: test
   script:
