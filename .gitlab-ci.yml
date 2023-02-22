@@ -34,12 +34,12 @@ cypress_test:
 #   script:
 #     - echo "Ready to test!"
 
-deploy:
-  # only:
-  #   - main
-  stage: deploy
-  script:
-    - echo "Deploy Project"
+# deploy:
+#   # only:
+#   #   - main
+#   stage: deploy
+#   script:
+#     - echo "Deploy Project"
 
 build_docker_image:
   stage: docker-image
