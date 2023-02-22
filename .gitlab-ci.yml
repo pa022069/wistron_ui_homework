@@ -31,8 +31,8 @@ stages:
 build_docker:
   stage: docker
   image: docker
-  needs:
-    - cypress_test
+  # needs:
+  #   - cypress_test
   before_script:
     - docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY_PASSWORD registry.gitlab.com
   script:
