@@ -18,5 +18,6 @@ cypress_test:
   script:
     - npm ci
     - npm run dev
+    - npm install -g wait-on
     - wait-on http://localhost:5173
     - npm run cypress:run
