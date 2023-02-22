@@ -3,6 +3,7 @@ Demo Page
 [link](https://pa022069.github.io/wistron_ui_homework/)
 [Docker Build](https://javascript.plainenglish.io/step-by-step-guide-to-dockerize-react-app-created-using-vite-90772423f7fb)
 [Cypress Tutorial](https://example.cypress.io/commands/querying)
+[Run Cypress in GitLab CI](https://medium.com/devops-with-valentine/run-your-cypress-e2e-tests-in-gitlab-ci-complete-guide-909990962001)
 
 ## Installation
 
