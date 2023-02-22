@@ -7,52 +7,37 @@ variables:
 stages:
   - build
   - test
-  - deploy
+  - docker
 
 build:
   stage: build
-  before_script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker build -t $CI_IMAGE .
-    - docker push $CI_IMAGE
-
-# build:
-#   stage: build
-#   script:
-#     - npm ci
-#     - npm install
-#     - npm run build
-#   artifacts:
-#     paths:
-#       - dist
+    - npm ci
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
 
 cypress_test:
   image: cypress/base:16.18.1
   stage: test
   needs:
     - build
+  script:
+    - npm ci
+    - npm install -g serve
+    - npm install -g wait-on
+    - serve -s dist &
+    - wait-on http://localhost:3000
+    - npm run cypress:run
+
+build_docker:
+  stage: docker
+  needs:
+    - cypress_test
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - docker pull $CI_IMAGE
-    - docker run $CI_IMAGE echo "run test script here"
-    - npm run cypress:run
-    # - npm ci
-    # - npm install -g serve
-    # - npm install -g wait-on
-    # - serve -s dist &
-    # - wait-on http://localhost:3000
-    # - npm run cypress:run
-
-# test_ready:
-#   stage: test
-#   script:
-#     - echo "Ready to test!"
-
-deploy:
-  # only:
-  #   - main
-  stage: deploy
-  script:
-    - echo "Deploy Project"
+    - docker build -t $CI_IMAGE .
+    - docker push $CI_IMAGE
