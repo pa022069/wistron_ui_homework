@@ -2,4 +2,5 @@ image: node:18
 
 run_cypress_test:
   script:
+    - npm install
     - npm run cypress:run
