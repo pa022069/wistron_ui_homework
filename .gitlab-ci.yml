@@ -3,7 +3,8 @@ image: node
 stages:
   - build
   - test
-  - deploy
+  - build-image
+  # - deploy
 
 build:
   stage: build
@@ -39,3 +40,10 @@ deploy:
   stage: deploy
   script:
     - echo "Deploy Project"
+
+build_docker_image:
+  stage: build-image
+  needs:
+    - cypress_test
+  script:
+    - docker build -t homework .
