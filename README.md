@@ -36,3 +36,4 @@ npm run server
 
 - [Cypress 教學](https://medium.com/devops-with-valentine/run-your-cypress-e2e-tests-in-gitlab-ci-complete-guide-909990962001)
 - [GitLab CI 影片教學](https://www.youtube.com/watch?v=-4XT8-znkuc&list=PLBd8JGCAcUAEwyH2kT1wW2BUmcSPQzGcu&index=1)
+- [TanStack React-Query 教學](https://tanstack.com/query/latest/docs/react/examples/react/basic)
