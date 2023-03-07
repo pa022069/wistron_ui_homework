@@ -1,0 +1,18 @@
+# docker-compose up -itd
+# docker-compose down
+
+version: '3.9'
+
+services:
+  homework:
+    image: pa022069/homework
+    ports: 
+      - 3000:3000
+    restart: always
+
+  nginx:
+    image: pa022069/set-nginx
+    ports: 
+      - 80:80
+      - 443:443
+    restart: always
