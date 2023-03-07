@@ -31,3 +31,8 @@ npm run server
 | [@tanstack/react-query](https://www.npmjs.com/package/@tanstack/react-query) | 4.24.4  |
 | [axios](https://www.npmjs.com/package/axios)                                 | 1.3.2   |
 | [react-icons](https://react-icons.github.io/react-icons/search?q=bell)       | 4.7.1   |
+
+## 參考
+
+- [Cypress 教學](https://medium.com/devops-with-valentine/run-your-cypress-e2e-tests-in-gitlab-ci-complete-guide-909990962001)
+- [GitLab CI 影片教學](https://www.youtube.com/watch?v=-4XT8-znkuc&list=PLBd8JGCAcUAEwyH2kT1wW2BUmcSPQzGcu&index=1)
